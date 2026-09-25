@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>edu.umg.programacion2</groupId>
+        <artifactId>libreria-proyecto</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>libreria-proyecto-ui</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- Clase con el main() que lanza la ventana, útil para
+             maven-shade-plugin o para "Run" directo desde el IDE -->
+        <mainClass>edu.umg.programacion2.proyecto.MainUI</mainClass>
+    </properties>
+
+    <dependencies>
+        <!-- Dependencia clave: -ui consume -core como librería.
+             NO se copian clases DAO aquí, se importan desde el jar instalado
+             con `mvn install` (ver libreria-proyecto-core). -->
+        <dependency>
+            <groupId>edu.umg.programacion2</groupId>
+            <artifactId>libreria-proyecto-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Swing viene incluido en el JDK, no necesita dependencia Maven.
+             Este módulo SÍ puede importar javax.swing.*, pero NO debería
+             importar java.sql.* directamente: eso vive en -core. -->
+    </dependencies>
+</project>

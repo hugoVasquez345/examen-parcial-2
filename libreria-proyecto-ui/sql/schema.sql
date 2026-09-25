@@ -1,0 +1,19 @@
+-- schema.sql — Variante B: Catálogo de libros
+-- Este es TU diseño. Complétalo tú a partir de variante-B-catalogo-libros.md
+--
+-- Recordatorios de la variante (no son la solución, son la checklist
+-- de reglas de negocio que tu tabla debe reflejar):
+--   - id: autoincremental, PK.
+--   - titulo: obligatorio (NOT NULL). ¿Cuántos caracteres necesita?
+--   - autor: obligatorio (NOT NULL). Una sola persona por libro.
+--   - categoria: texto libre, no es catálogo cerrado. ¿Puede quedar vacía?
+--   - precio: siempre > 0. ¿DECIMAL con cuántos dígitos/decimales?
+--   - existencias: entero >= 0 (permite 0 = agotado, no negativos).
+--   - anio_publicacion: no puede ser mayor al año actual. ¿INT o YEAR?
+--
+-- CREATE DATABASE IF NOT EXISTS catalogo_libros;
+-- USE catalogo_libros;
+--
+-- CREATE TABLE libro (
+--     -- completa tú las columnas, tipos, longitudes y restricciones
+-- );
